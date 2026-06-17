@@ -1,368 +1,517 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TikTok Shop Creator Collaboration Brief - Phone Holder Stand</title>
+  <title>折叠硅胶支架达人合作说明</title>
   <style>
     :root {
-      --ink: #1d2430;
-      --muted: #5c6675;
-      --line: #d9dee7;
-      --soft: #f6f7f9;
-      --accent: #f26a2e;
+      --ink: #1d1d1f;
+      --muted: #6e6e73;
+      --line: #d2d2d7;
+      --page: #f5f5f7;
+      --panel: #fff;
+      --accent: #ff6a00;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft YaHei", sans-serif;
       color: var(--ink);
-      background: #fff;
+      background: var(--page);
       line-height: 1.55;
+      letter-spacing: 0;
+      overflow-x: hidden;
     }
-    main {
-      max-width: 1080px;
+    p, span, strong, h1, h2, h3, li { overflow-wrap: anywhere; }
+    img { display: block; max-width: 100%; }
+    main { overflow: hidden; }
+    .wrap {
+      width: min(1120px, calc(100% - 36px));
       margin: 0 auto;
-      padding: 36px 28px 64px;
     }
-    header {
-      border-bottom: 3px solid var(--ink);
-      padding-bottom: 18px;
-      margin-bottom: 26px;
+    .hero {
+      text-align: center;
+      padding: 58px 0 28px;
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 700;
     }
     h1 {
-      font-size: 34px;
-      line-height: 1.15;
-      margin: 0 0 10px;
-      letter-spacing: 0;
+      margin: 0 auto;
+      max-width: 900px;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.04;
+      font-weight: 800;
+      overflow-wrap: anywhere;
     }
-    h2 {
-      font-size: 22px;
-      margin: 32px 0 12px;
-      padding-left: 10px;
-      border-left: 5px solid var(--accent);
-    }
-    h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-    }
-    p { margin: 8px 0; }
-    li { margin: 5px 0; }
-    .subtitle {
+    .title-mobile { display: none; }
+    .lead {
+      max-width: 760px;
+      margin: 20px auto 0;
       color: var(--muted);
-      font-size: 16px;
-      margin: 0;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.45;
     }
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
+    .hero-image {
+      margin: 34px auto 0;
+      width: min(900px, 100%);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, .12);
     }
-    .pill {
-      border: 1px solid var(--line);
-      background: var(--soft);
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 13px;
-      color: #313946;
+    .hero-image img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center;
+    }
+    section { padding: 34px 0; }
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.08;
+      text-align: center;
+      font-weight: 800;
+    }
+    .section-subtitle {
+      max-width: 740px;
+      margin: -4px auto 24px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 18px;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
-      background: #fff;
-    }
-    .card-body { padding: 15px; }
-    .card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      background: #000;
-    }
-    .wide-card {
-      display: grid;
-      grid-template-columns: 1fr 1.05fr;
-      gap: 0;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
-      margin: 14px 0;
-    }
-    .wide-card img {
-      width: 100%;
-      height: 390px;
-      object-fit: cover;
-      display: block;
-      background: #000;
-    }
-    .wide-card .card-body { padding: 18px; }
-    .hooks-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
-      align-items: stretch;
     }
-    .hook-card {
-      border: 1px solid var(--line);
+    .tile {
+      min-height: 180px;
+      padding: 22px;
       border-radius: 8px;
-      overflow: hidden;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
+      background: var(--panel);
+      border: 1px solid rgba(0, 0, 0, .05);
     }
-    .hook-card img {
-      width: 100%;
-      height: 245px;
-      object-fit: cover;
+    .tile strong {
       display: block;
-      background: #000;
-    }
-    .hook-card .card-body {
-      padding: 12px 13px 14px;
-    }
-    .hook-card .voiceover {
-      font-size: 15px;
-      line-height: 1.35;
-      margin-top: 6px;
-    }
-    .hook-card p {
-      font-size: 13px;
-      line-height: 1.42;
-      margin: 7px 0;
-    }
-    .hook-card .tag {
-      font-size: 11px;
-      padding: 3px 6px;
-    }
-    .cta-layout {
-      display: grid;
-      grid-template-columns: minmax(0, .9fr) minmax(360px, 1.1fr);
-      gap: 18px;
-      align-items: start;
-    }
-    .cta-list {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--soft);
-      padding: 16px 18px;
-    }
-    .cta-list ol {
-      margin-bottom: 0;
-      padding-left: 22px;
-    }
-    .final-card {
-      display: grid;
-      grid-template-columns: 1fr .95fr;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
-      background: #fff;
-    }
-    .final-card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      display: block;
-      background: #000;
-    }
-    .final-card .card-body {
-      padding: 16px;
-    }
-    .tag {
-      display: inline-block;
-      color: #fff;
-      background: var(--accent);
-      border-radius: 4px;
-      padding: 3px 7px;
-      font-size: 12px;
       margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.25;
     }
-    .voiceover {
-      font-size: 17px;
-      font-weight: 700;
-      color: #111827;
-    }
-    .note {
+    .tile span {
+      display: block;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 15px;
     }
-    .script {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fff8f4;
-      padding: 16px 18px;
-      font-size: 16px;
-    }
-    .do-dont {
+    .feature-split {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
+      align-items: stretch;
     }
-    .box {
-      background: var(--soft);
-      border: 1px solid var(--line);
+    .feature-panel {
+      min-height: 520px;
       border-radius: 8px;
-      padding: 14px 16px;
+      overflow: hidden;
+      background: var(--panel);
+      position: relative;
     }
-    @media (max-width: 760px) {
-      main { padding: 24px 16px 48px; }
-      .grid, .wide-card, .hooks-grid, .cta-layout, .final-card, .do-dont { grid-template-columns: 1fr; }
-      .card img, .wide-card img, .hook-card img, .final-card img { height: auto; max-height: none; }
-      h1 { font-size: 28px; }
+    .feature-panel img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
     }
-    @media print {
-      main { max-width: none; padding: 18px; }
-      .card, .wide-card, .box, .script { break-inside: avoid; }
+    .feature-copy {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .feature-copy h3 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.08;
+    }
+    .feature-copy p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .callout {
+      position: absolute;
+      right: 7%;
+      bottom: 6%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-weight: 700;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, .55);
+    }
+    .callout::before {
+      content: "";
+      width: 26px;
+      height: 26px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 999px rgba(0, 0, 0, .08), 0 0 18px rgba(255, 106, 0, .85);
+      background: rgba(255, 106, 0, .22);
+    }
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .beat {
+      background: var(--panel);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, .05);
+    }
+    .beat img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .beat div { padding: 14px; }
+    .time {
+      display: block;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .beat strong {
+      display: block;
+      font-size: 17px;
+      line-height: 1.25;
+      margin-bottom: 5px;
+    }
+    .beat p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .structure {
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 28px;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+    .step:first-child { border-top: 0; padding-top: 0; }
+    .step:last-child { padding-bottom: 0; }
+    .step b {
+      color: var(--accent);
+      font-size: 18px;
+    }
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .hooks {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .hook {
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 22px;
+      border: 1px solid rgba(0, 0, 0, .05);
+    }
+    .hook small {
+      color: var(--accent);
+      font-weight: 800;
+    }
+    .hook p {
+      margin: 10px 0 0;
+      font-size: 21px;
+      line-height: 1.35;
+      font-weight: 750;
+    }
+    .hook span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .cta {
+      text-align: center;
+      background: #111;
+      color: #fff;
+      border-radius: 8px;
+      padding: 44px 28px;
+    }
+    .cta h2 { color: #fff; }
+    .cta p {
+      max-width: 720px;
+      margin: 0 auto 18px;
+      color: rgba(255, 255, 255, .78);
+      font-size: 19px;
+    }
+    .cta-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 24px;
+      text-align: left;
+    }
+    .cta-list div {
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 8px;
+      padding: 16px;
+      color: rgba(255, 255, 255, .9);
+    }
+    .notes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .notes ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    .notes li { margin: 8px 0; }
+    footer {
+      padding: 24px 0 52px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+    @media (max-width: 900px) {
+      .grid, .timeline, .hooks, .cta-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .feature-split, .notes { grid-template-columns: 1fr; }
+      .feature-panel, .feature-panel img { min-height: auto; }
+      .feature-panel img { aspect-ratio: 1 / 1; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 48px, 1120px); }
+      .hero { padding-top: 38px; }
+      h1 { font-size: 36px; line-height: 1.08; }
+      .title-desktop { display: none; }
+      .title-mobile { display: inline; }
+      .lead { font-size: 18px; max-width: 320px; }
+      p, span, li { word-break: break-all; }
+      section { padding: 26px 0; }
+      .grid, .timeline, .hooks, .cta-list { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 1fr; gap: 6px; }
+      .tile { min-height: auto; }
+      .feature-copy { padding: 24px; }
     }
   </style>
 </head>
 <body>
 <main>
-  <header>
-    <h1>TikTok Shop Creator Collaboration Brief</h1>
-    <p class="subtitle">Flexible Silicone Aluminum Phone Holder Stand | Bendable phone and tablet stand</p>
-    <div class="pill-row">
-      <span class="pill">Desk setup</span>
-      <span class="pill">Hands-free</span>
-      <span class="pill">Bendable</span>
-      <span class="pill">Phone + tablet</span>
-      <span class="pill">Creator-style demo</span>
+  <header class="hero wrap">
+    <p class="eyebrow">达人合作说明 · 中文版</p>
+    <h1>
+      <span class="title-desktop">一个能立、能挂、<br>能带走的折叠支架。</span>
+      <span class="title-mobile">一个能立、<br>能挂、能带走的<br>折叠支架。</span>
+    </h1>
+    <p class="lead">重点不是“介绍一个支架”，而是让观众在前 5 秒看到：手机、电脑、平板、旅行收纳和边充边用，都能被它解决。</p>
+    <div class="hero-image">
+      <img src="creator-brief-assets/apple-main-desk.jpg" alt="折叠硅胶支架桌面场景">
     </div>
   </header>
 
-  <h2>Campaign Goal</h2>
-  <p>Create a natural creator-style video that shows the result in the first 3 seconds: the phone stays beside the screen, hands-free. Keep the tone casual, useful, and lightly surprised.</p>
-
-  <h2>Main Selling Points</h2>
-  <ol>
-    <li><strong>Bendable design:</strong> shape it into different angles for a monitor-side holder or desk stand.</li>
-    <li><strong>Keeps the phone in view:</strong> useful while working, scrolling, checking messages, filming, or FaceTiming.</li>
-    <li><strong>Works for phone and tablet:</strong> show both use cases if possible.</li>
-    <li><strong>Portable and easy to store:</strong> can be folded or rolled up for desk, bedside, office, or travel use.</li>
-    <li><strong>Easy to understand visually:</strong> show how to bend it and place the phone inside so viewers instantly get it.</li>
-  </ol>
-
-  <h2>Recommended Video Structure</h2>
-  <ol>
-    <li><strong>0-3 seconds:</strong> show the result first. Phone is already held beside the monitor or laptop.</li>
-    <li><strong>3-8 seconds:</strong> show how the stand bends and how the phone is placed into it.</li>
-    <li><strong>8-15 seconds:</strong> show stable phone use, then cut to tablet or another desk use case.</li>
-    <li><strong>15-22 seconds:</strong> show how it fits everyday routines: work, scrolling, video calls, filming.</li>
-    <li><strong>Final 3-5 seconds:</strong> return to the clean desk setup and include a simple shopping cart CTA.</li>
-  </ol>
-
-  <h2>Hooks + Matching Visuals</h2>
-
-  <div class="hooks-grid">
-    <section class="hook-card">
-      <img src="creator-brief-assets/hook-office-monitor.png" alt="Phone holder on office monitor">
-      <div class="card-body">
-        <span class="tag">Hook 1 | Best opening</span>
-        <p class="voiceover">Stop looking down at your phone every time you work.</p>
-        <p><strong>Best visual:</strong> phone held beside a monitor or laptop.</p>
-        <p class="note">Hits the desk-work pain point immediately.</p>
+  <section class="wrap">
+    <h2>主要卖点</h2>
+    <p class="section-subtitle">口播要像真实好物分享，少解释参数，多展示“它马上能帮我干什么”。</p>
+    <div class="grid">
+      <div class="tile">
+        <strong>多角度折叠</strong>
+        <span>硅胶外层加可弯折结构，能快速变成桌面支架、屏幕边挂支架。</span>
       </div>
-    </section>
-
-    <section class="hook-card">
-      <img src="creator-brief-assets/bend-place-phone.png" alt="Bend stand and place phone">
-      <div class="card-body">
-        <span class="tag">Hook 2 | Demo hook</span>
-        <p class="voiceover">I thought this was just a simple silicone strip, until I bent it like this.</p>
-        <p><strong>Best visual:</strong> hands bending the stand, then placing the phone in.</p>
-        <p class="note">Creates curiosity and explains the bendable feature.</p>
+      <div class="tile">
+        <strong>手机和平板都能用</strong>
+        <span>画面里要让观众看到不止手机，平板场景能提高价值感。</span>
       </div>
-    </section>
-
-    <section class="hook-card">
-      <img src="creator-brief-assets/product-hook-text.png" alt="Product close-up with hook text">
-      <div class="card-body">
-        <span class="tag">Hook 3 | Curiosity hook</span>
-        <p class="voiceover">You won’t get it until you see how it holds your phone.</p>
-        <p><strong>Best visual:</strong> product close-up, then cut to phone/tablet support.</p>
-        <p class="note">Use case must appear within 1-2 seconds.</p>
+      <div class="tile">
+        <strong>底部可充电</strong>
+        <span>手机放上去后底部预留空间，边看边充，不用拿下来。</span>
       </div>
-    </section>
-  </div>
-
-  <h2>Mid-Video Demonstration</h2>
-  <div class="grid">
-    <article class="card">
-      <img src="creator-brief-assets/bend-place-phone.png" alt="Bend and place phone">
-      <div class="card-body">
-        <h3>Bend and Place Demo</h3>
-        <p class="voiceover">You just bend it into the shape you need, and it turns into a phone stand in seconds.</p>
-        <p>Purpose: reduces setup confusion and shows viewers exactly how to use it.</p>
+      <div class="tile">
+        <strong>折叠便携</strong>
+        <span>能放进口袋或包里，出门、旅行、办公室都能带。</span>
       </div>
-    </article>
-    <article class="card">
-      <img src="creator-brief-assets/tablet-support.png" alt="Tablet support">
-      <div class="card-body">
-        <h3>Tablet Support Demo</h3>
-        <p class="voiceover">It is not only for phones. It can also hold a tablet for watching, reading, or video calls.</p>
-        <p>Purpose: makes the product feel more useful and not limited to one device.</p>
-      </div>
-    </article>
-  </div>
-
-  <h2>CTA Options</h2>
-  <div class="cta-layout">
-    <div class="cta-list">
-      <p>Use one CTA only. Keep it short and natural:</p>
-      <ol>
-        <li>Tap the shopping cart and try it for your desk setup.</li>
-        <li>Click the product link and keep one on your desk.</li>
-        <li>Add it to your cart if your phone is always in the wrong spot.</li>
-        <li>Tap the cart and see how much easier this makes your setup.</li>
-        <li>Grab one and stop propping your phone against random things.</li>
-      </ol>
     </div>
-    <section class="final-card">
-      <img src="creator-brief-assets/final-desk-setup.png" alt="Final desk setup">
-      <div class="card-body">
-        <span class="tag">Final visual</span>
-        <p><strong>Best visual:</strong> return to the finished desk setup, with the phone stable beside the screen.</p>
-        <p class="note">Hold the final shot for 1-2 seconds so viewers have time to click.</p>
+  </section>
+
+  <section class="wrap">
+    <div class="feature-split">
+      <div class="feature-panel">
+        <img src="creator-brief-assets/apple-laptop-hook.jpg" alt="支架挂在笔记本屏幕边缘">
       </div>
-    </section>
-  </div>
-
-  <h2>Reference Voiceover</h2>
-  <div class="script">
-    <p>Stop looking down at your phone every time you work. This little bendable stand keeps your phone right next to your screen, so you can scroll, check messages, film, or FaceTime hands-free. Just bend it into the shape you need, place your phone in, and you are set. It can even work for a tablet. Tap the shopping cart and try it for your desk setup.</p>
-  </div>
-
-  <h2>Creator Notes</h2>
-  <div class="do-dont">
-    <div class="box">
-      <h3>Do</h3>
-      <ul>
-        <li>Show the result in the first 3 seconds.</li>
-        <li>Show hands bending the stand and placing the phone inside.</li>
-        <li>Make the video feel like a real creator recommendation.</li>
-        <li>Show both phone and tablet if possible.</li>
-        <li>End on a clean, stable desk setup.</li>
-      </ul>
+      <div class="feature-panel feature-copy">
+        <h3>先让观众看到结果。</h3>
+        <p>开头不要先讲材质，也不要先拍包装。第一眼直接给到“手机挂在电脑边上”的完成效果，让观众马上知道它解决的是桌面使用场景。</p>
+        <p>适合画面：电脑旁、办公室桌面、剪辑工作台、学习桌。</p>
+      </div>
     </div>
-    <div class="box">
-      <h3>Avoid</h3>
-      <ul>
-        <li>Do not start with packaging.</li>
-        <li>Do not spend the first seconds explaining the product name.</li>
-        <li>Do not make medical claims such as neck pain relief or posture correction.</li>
-        <li>Do not say "never falls," "100% anti-slip," or exaggerated strength claims.</li>
-        <li>Do not show shaky tablet or phone support.</li>
-      </ul>
+  </section>
+
+  <section class="wrap">
+    <h2>0-5 秒重点开场</h2>
+    <p class="section-subtitle">前 5 秒用快切，不用长口播。每个画面 0.7-1 秒，让观众不断看到新用途。</p>
+    <div class="timeline">
+      <article class="beat">
+        <img src="creator-brief-assets/apple-main-desk.jpg" alt="手机支架场景">
+        <div>
+          <span class="time">0-1 秒</span>
+          <strong>手机支架</strong>
+          <p>手机立在桌面上，先给“能用”的结果。</p>
+        </div>
+      </article>
+      <article class="beat">
+        <img src="creator-brief-assets/apple-laptop-hook.jpg" alt="电脑支架场景">
+        <div>
+          <span class="time">1-2 秒</span>
+          <strong>电脑边挂</strong>
+          <p>手机挂在电脑旁，打中办公痛点。</p>
+        </div>
+      </article>
+      <article class="beat">
+        <img src="creator-brief-assets/tablet-support.png" alt="平板支架场景">
+        <div>
+          <span class="time">2-3 秒</span>
+          <strong>平板支架</strong>
+          <p>切到平板，放大产品价值感。</p>
+        </div>
+      </article>
+      <article class="beat">
+        <img src="creator-brief-assets/apple-main-desk.jpg" alt="折叠旅行收纳">
+        <div>
+          <span class="time">3-4 秒</span>
+          <strong>口袋旅行</strong>
+          <p>拍折叠后塞进口袋或包里。</p>
+        </div>
+      </article>
+      <article class="beat">
+        <img src="creator-brief-assets/apple-charging-port.jpg" alt="底部充电口">
+        <div>
+          <span class="time">4-5 秒</span>
+          <strong>边放边充</strong>
+          <p>给底部充电口特写，强化实用性。</p>
+        </div>
+      </article>
     </div>
-  </div>
+  </section>
+
+  <section class="wrap">
+    <div class="feature-split">
+      <div class="feature-panel charging-visual">
+        <img src="creator-brief-assets/apple-charging-port.jpg" alt="底部预留充电口">
+        <div class="callout">底部预留充电口</div>
+      </div>
+      <div class="feature-panel feature-copy">
+        <h3>充电口要单独给特写。</h3>
+        <p>这个点很适合做转化，因为观众会立刻想到：手机不用从支架上拿下来，也能继续充电。</p>
+        <p>建议画面：手把充电线插上，手机仍然稳稳放在支架上。这个镜头放在 0-5 秒快切里，也可以在中段再重复一次。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>推荐视频结构</h2>
+    <div class="structure">
+      <div class="step">
+        <b>0-5 秒</b>
+        <p>快速切换 5 个场景：手机支架、电脑边挂、平板支架、旅行放进口袋、底部充电口。口播一句即可：“这个支架比我想的能用太多了。”</p>
+      </div>
+      <div class="step">
+        <b>5-10 秒</b>
+        <p>展示手部弯折过程，让观众明白它不是固定角度，而是可以根据设备和桌面调整。</p>
+      </div>
+      <div class="step">
+        <b>10-18 秒</b>
+        <p>重点展示桌面办公：手机挂在电脑旁边，消息、视频、直播或资料都不用低头看。</p>
+      </div>
+      <div class="step">
+        <b>18-25 秒</b>
+        <p>补充平板和旅行收纳场景，让它从“一个手机架”变成“多场景小工具”。</p>
+      </div>
+      <div class="step">
+        <b>结尾 3 秒</b>
+        <p>回到干净桌面完成镜头，手指向购物车或产品链接，CTA 简短自然。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>开头钩子</h2>
+    <p class="section-subtitle">选择一个即可，不要三个都念。画面必须比口播更快。</p>
+    <div class="hooks">
+      <div class="hook">
+        <small>痛点型</small>
+        <p>别再把手机随便靠在杯子、键盘、电脑边上了。</p>
+        <span>匹配画面：手机被支架稳稳挂在电脑旁。</span>
+      </div>
+      <div class="hook">
+        <small>反差型</small>
+        <p>我以为它只是个硅胶片，结果手机、平板、电脑旁边都能用。</p>
+        <span>匹配画面：连续快切三种场景。</span>
+      </div>
+      <div class="hook">
+        <small>实用型</small>
+        <p>这个小东西，真的把我的桌面手机位置解决了。</p>
+        <span>匹配画面：干净桌面完成效果。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="cta">
+      <h2>CTA 方向</h2>
+      <p>结尾不要喊得太硬，像达人日常推荐。核心是让用户点购物车，而不是背广告词。</p>
+      <div class="cta-list">
+        <div>想让手机固定在桌面上的，可以点购物车看看。</div>
+        <div>办公桌、床头、旅行都能用，链接在小黄车。</div>
+        <div>如果你手机总是没地方放，这个真的可以试一下。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>拍摄注意</h2>
+    <div class="notes">
+      <div class="tile">
+        <strong>必须拍</strong>
+        <ul>
+          <li>0-5 秒场景快切。</li>
+          <li>手部弯折支架。</li>
+          <li>手机挂在电脑边。</li>
+          <li>平板支撑画面。</li>
+          <li>底部插线充电特写。</li>
+        </ul>
+      </div>
+      <div class="tile">
+        <strong>尽量避免</strong>
+        <ul>
+          <li>开头拍包装或慢慢拆箱。</li>
+          <li>前几秒只念产品名字。</li>
+          <li>说“永不掉落”“100% 防滑”等绝对化词。</li>
+          <li>做医疗类表达，比如治疗颈椎、矫正姿势。</li>
+          <li>平板画面晃动或支撑不稳。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </main>
+<footer class="wrap">TikTok Shop 折叠硅胶支架 · 达人合作说明</footer>
 </body>
 </html>
