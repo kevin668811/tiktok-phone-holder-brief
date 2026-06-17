@@ -1,0 +1,21 @@
+work/**/*.mp4
+work/**/*.mov
+work/**/*.webm
+work/**/*.png
+work/**/*.jpg
+work/**/*.jpeg
+work/**/*.gif
+work/**/chrome-profile*/
+work/**/profile-*/
+work/**/Cache/
+work/**/Code Cache/
+work/**/GPUCache/
+work/**/Crashpad/
+work/tiktok-*.json
+work/tiktok-*.html
+work/tiksave.html
+work/video-frame.html
+work/video-probe.html
+work/reference-*.mp4
+work/reference-*.jpg
+outputs/
