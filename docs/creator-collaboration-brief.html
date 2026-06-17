@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TikTok Shop Creator Collaboration Brief - Phone Holder Stand</title>
+  <style>
+    :root {
+      --ink: #1d2430;
+      --muted: #5c6675;
+      --line: #d9dee7;
+      --soft: #f6f7f9;
+      --accent: #f26a2e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.55;
+    }
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 36px 28px 64px;
+    }
+    header {
+      border-bottom: 3px solid var(--ink);
+      padding-bottom: 18px;
+      margin-bottom: 26px;
+    }
+    h1 {
+      font-size: 34px;
+      line-height: 1.15;
+      margin: 0 0 10px;
+      letter-spacing: 0;
+    }
+    h2 {
+      font-size: 22px;
+      margin: 32px 0 12px;
+      padding-left: 10px;
+      border-left: 5px solid var(--accent);
+    }
+    h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    p { margin: 8px 0; }
+    li { margin: 5px 0; }
+    .subtitle {
+      color: var(--muted);
+      font-size: 16px;
+      margin: 0;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .pill {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 13px;
+      color: #313946;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .card-body { padding: 15px; }
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background: #000;
+    }
+    .wide-card {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 14px 0;
+    }
+    .wide-card img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      display: block;
+      background: #000;
+    }
+    .wide-card .card-body { padding: 18px; }
+    .hooks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+    .hook-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    .hook-card img {
+      width: 100%;
+      height: 245px;
+      object-fit: cover;
+      display: block;
+      background: #000;
+    }
+    .hook-card .card-body {
+      padding: 12px 13px 14px;
+    }
+    .hook-card .voiceover {
+      font-size: 15px;
+      line-height: 1.35;
+      margin-top: 6px;
+    }
+    .hook-card p {
+      font-size: 13px;
+      line-height: 1.42;
+      margin: 7px 0;
+    }
+    .hook-card .tag {
+      font-size: 11px;
+      padding: 3px 6px;
+    }
+    .cta-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(360px, 1.1fr);
+      gap: 18px;
+      align-items: start;
+    }
+    .cta-list {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--soft);
+      padding: 16px 18px;
+    }
+    .cta-list ol {
+      margin-bottom: 0;
+      padding-left: 22px;
+    }
+    .final-card {
+      display: grid;
+      grid-template-columns: 1fr .95fr;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .final-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      background: #000;
+    }
+    .final-card .card-body {
+      padding: 16px;
+    }
+    .tag {
+      display: inline-block;
+      color: #fff;
+      background: var(--accent);
+      border-radius: 4px;
+      padding: 3px 7px;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .voiceover {
+      font-size: 17px;
+      font-weight: 700;
+      color: #111827;
+    }
+    .note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .script {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff8f4;
+      padding: 16px 18px;
+      font-size: 16px;
+    }
+    .do-dont {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .box {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    @media (max-width: 760px) {
+      main { padding: 24px 16px 48px; }
+      .grid, .wide-card, .hooks-grid, .cta-layout, .final-card, .do-dont { grid-template-columns: 1fr; }
+      .card img, .wide-card img, .hook-card img, .final-card img { height: auto; max-height: none; }
+      h1 { font-size: 28px; }
+    }
+    @media print {
+      main { max-width: none; padding: 18px; }
+      .card, .wide-card, .box, .script { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>TikTok Shop Creator Collaboration Brief</h1>
+    <p class="subtitle">Flexible Silicone Aluminum Phone Holder Stand | Bendable phone and tablet stand</p>
+    <div class="pill-row">
+      <span class="pill">Desk setup</span>
+      <span class="pill">Hands-free</span>
+      <span class="pill">Bendable</span>
+      <span class="pill">Phone + tablet</span>
+      <span class="pill">Creator-style demo</span>
+    </div>
+  </header>
+
+  <h2>Campaign Goal</h2>
+  <p>Create a natural creator-style video that shows the result in the first 3 seconds: the phone stays beside the screen, hands-free. Keep the tone casual, useful, and lightly surprised.</p>
+
+  <h2>Main Selling Points</h2>
+  <ol>
+    <li><strong>Bendable design:</strong> shape it into different angles for a monitor-side holder or desk stand.</li>
+    <li><strong>Keeps the phone in view:</strong> useful while working, scrolling, checking messages, filming, or FaceTiming.</li>
+    <li><strong>Works for phone and tablet:</strong> show both use cases if possible.</li>
+    <li><strong>Portable and easy to store:</strong> can be folded or rolled up for desk, bedside, office, or travel use.</li>
+    <li><strong>Easy to understand visually:</strong> show how to bend it and place the phone inside so viewers instantly get it.</li>
+  </ol>
+
+  <h2>Recommended Video Structure</h2>
+  <ol>
+    <li><strong>0-3 seconds:</strong> show the result first. Phone is already held beside the monitor or laptop.</li>
+    <li><strong>3-8 seconds:</strong> show how the stand bends and how the phone is placed into it.</li>
+    <li><strong>8-15 seconds:</strong> show stable phone use, then cut to tablet or another desk use case.</li>
+    <li><strong>15-22 seconds:</strong> show how it fits everyday routines: work, scrolling, video calls, filming.</li>
+    <li><strong>Final 3-5 seconds:</strong> return to the clean desk setup and include a simple shopping cart CTA.</li>
+  </ol>
+
+  <h2>Hooks + Matching Visuals</h2>
+
+  <div class="hooks-grid">
+    <section class="hook-card">
+      <img src="creator-brief-assets/hook-office-monitor.png" alt="Phone holder on office monitor">
+      <div class="card-body">
+        <span class="tag">Hook 1 | Best opening</span>
+        <p class="voiceover">Stop looking down at your phone every time you work.</p>
+        <p><strong>Best visual:</strong> phone held beside a monitor or laptop.</p>
+        <p class="note">Hits the desk-work pain point immediately.</p>
+      </div>
+    </section>
+
+    <section class="hook-card">
+      <img src="creator-brief-assets/bend-place-phone.png" alt="Bend stand and place phone">
+      <div class="card-body">
+        <span class="tag">Hook 2 | Demo hook</span>
+        <p class="voiceover">I thought this was just a simple silicone strip, until I bent it like this.</p>
+        <p><strong>Best visual:</strong> hands bending the stand, then placing the phone in.</p>
+        <p class="note">Creates curiosity and explains the bendable feature.</p>
+      </div>
+    </section>
+
+    <section class="hook-card">
+      <img src="creator-brief-assets/product-hook-text.png" alt="Product close-up with hook text">
+      <div class="card-body">
+        <span class="tag">Hook 3 | Curiosity hook</span>
+        <p class="voiceover">You won’t get it until you see how it holds your phone.</p>
+        <p><strong>Best visual:</strong> product close-up, then cut to phone/tablet support.</p>
+        <p class="note">Use case must appear within 1-2 seconds.</p>
+      </div>
+    </section>
+  </div>
+
+  <h2>Mid-Video Demonstration</h2>
+  <div class="grid">
+    <article class="card">
+      <img src="creator-brief-assets/bend-place-phone.png" alt="Bend and place phone">
+      <div class="card-body">
+        <h3>Bend and Place Demo</h3>
+        <p class="voiceover">You just bend it into the shape you need, and it turns into a phone stand in seconds.</p>
+        <p>Purpose: reduces setup confusion and shows viewers exactly how to use it.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="creator-brief-assets/tablet-support.png" alt="Tablet support">
+      <div class="card-body">
+        <h3>Tablet Support Demo</h3>
+        <p class="voiceover">It is not only for phones. It can also hold a tablet for watching, reading, or video calls.</p>
+        <p>Purpose: makes the product feel more useful and not limited to one device.</p>
+      </div>
+    </article>
+  </div>
+
+  <h2>CTA Options</h2>
+  <div class="cta-layout">
+    <div class="cta-list">
+      <p>Use one CTA only. Keep it short and natural:</p>
+      <ol>
+        <li>Tap the shopping cart and try it for your desk setup.</li>
+        <li>Click the product link and keep one on your desk.</li>
+        <li>Add it to your cart if your phone is always in the wrong spot.</li>
+        <li>Tap the cart and see how much easier this makes your setup.</li>
+        <li>Grab one and stop propping your phone against random things.</li>
+      </ol>
+    </div>
+    <section class="final-card">
+      <img src="creator-brief-assets/final-desk-setup.png" alt="Final desk setup">
+      <div class="card-body">
+        <span class="tag">Final visual</span>
+        <p><strong>Best visual:</strong> return to the finished desk setup, with the phone stable beside the screen.</p>
+        <p class="note">Hold the final shot for 1-2 seconds so viewers have time to click.</p>
+      </div>
+    </section>
+  </div>
+
+  <h2>Reference Voiceover</h2>
+  <div class="script">
+    <p>Stop looking down at your phone every time you work. This little bendable stand keeps your phone right next to your screen, so you can scroll, check messages, film, or FaceTime hands-free. Just bend it into the shape you need, place your phone in, and you are set. It can even work for a tablet. Tap the shopping cart and try it for your desk setup.</p>
+  </div>
+
+  <h2>Creator Notes</h2>
+  <div class="do-dont">
+    <div class="box">
+      <h3>Do</h3>
+      <ul>
+        <li>Show the result in the first 3 seconds.</li>
+        <li>Show hands bending the stand and placing the phone inside.</li>
+        <li>Make the video feel like a real creator recommendation.</li>
+        <li>Show both phone and tablet if possible.</li>
+        <li>End on a clean, stable desk setup.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Avoid</h3>
+      <ul>
+        <li>Do not start with packaging.</li>
+        <li>Do not spend the first seconds explaining the product name.</li>
+        <li>Do not make medical claims such as neck pain relief or posture correction.</li>
+        <li>Do not say "never falls," "100% anti-slip," or exaggerated strength claims.</li>
+        <li>Do not show shaky tablet or phone support.</li>
+      </ul>
+    </div>
+  </div>
+</main>
+</body>
+</html>
