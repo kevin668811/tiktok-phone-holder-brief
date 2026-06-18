@@ -135,6 +135,28 @@
     .compact-visual img {
       min-height: 440px;
     }
+    .result-visuals {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 10px;
+      padding: 10px;
+      background: var(--panel);
+    }
+    .result-visuals img {
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      border-radius: 6px;
+      background: #fff;
+    }
+    .result-visuals .primary-result {
+      aspect-ratio: 16 / 11;
+      object-fit: cover;
+    }
+    .result-visuals .scene-result {
+      aspect-ratio: 970 / 600;
+      object-fit: contain;
+    }
     .feature-copy {
       padding: 34px;
       display: flex;
@@ -235,7 +257,8 @@
     .beat img {
       width: 100%;
       height: 150px;
-      object-fit: cover;
+      object-fit: contain;
+      background: #fff;
     }
     .beat div { padding: 14px; }
     .time {
@@ -355,6 +378,7 @@
       .feature-split, .notes { grid-template-columns: 1fr; }
       .feature-panel, .feature-panel img { min-height: auto; }
       .feature-panel img { aspect-ratio: 1 / 1; }
+      .result-visuals img { aspect-ratio: auto; }
       .generation-compare { grid-template-columns: 1fr 1fr; }
       .generation-card, .generation-card img { min-height: 340px; }
       .compact-visual {
@@ -374,6 +398,10 @@
       .grid, .timeline, .hooks, .cta-list { grid-template-columns: 1fr; }
       .generation-compare { grid-template-columns: 1fr; }
       .generation-card, .generation-card img { min-height: 300px; }
+      .beat img {
+        height: auto;
+        object-fit: contain;
+      }
       .step { grid-template-columns: 1fr; gap: 6px; }
       .tile { min-height: auto; }
       .feature-copy { padding: 24px; }
@@ -419,12 +447,13 @@
 
   <section class="wrap">
     <div class="feature-split">
-      <div class="feature-panel compact-visual">
-        <img src="creator-brief-assets/apple-laptop-hook.jpg" alt="支架挂在笔记本屏幕边缘">
+      <div class="feature-panel compact-visual result-visuals">
+        <img class="primary-result" src="creator-brief-assets/apple-laptop-hook.jpg" alt="支架挂在笔记本屏幕边缘">
+        <img class="scene-result" src="creator-brief-assets/multi-scene-stand.jpg" alt="平板、笔记本和桌边悬挂多场景">
       </div>
       <div class="feature-panel feature-copy">
         <h3>开头先让观众看到结果</h3>
-        <p>第一眼直接给到“手机挂在电脑边上”的完成效果，让观众马上知道它的使用场景。</p>
+        <p>第一眼直接给到“手机挂在电脑或桌面”的完成效果，让观众马上知道它的使用场景。</p>
       </div>
     </div>
   </section>
@@ -496,13 +525,13 @@
   <section class="wrap">
     <div class="feature-split">
       <div class="feature-panel generation-compare">
-        <div class="generation-card first">
-          <span class="generation-label">二代升级款</span>
-          <img src="creator-brief-assets/gen2-material-structure.jpg" alt="二代材料结构图">
-        </div>
         <div class="generation-card second">
           <span class="generation-label">一代基础款</span>
           <img src="creator-brief-assets/gen2-stand.jpg" alt="一代基础款折叠支架">
+        </div>
+        <div class="generation-card first">
+          <span class="generation-label">二代升级款</span>
+          <img src="creator-brief-assets/gen2-material-structure.jpg" alt="二代材料结构图">
         </div>
       </div>
       <div class="feature-panel feature-copy">
