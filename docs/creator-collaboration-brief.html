@@ -128,6 +128,13 @@
       min-height: 520px;
       object-fit: cover;
     }
+    .compact-visual {
+      align-self: center;
+      min-height: 440px;
+    }
+    .compact-visual img {
+      min-height: 440px;
+    }
     .feature-copy {
       padding: 34px;
       display: flex;
@@ -298,6 +305,10 @@
       .feature-split, .notes { grid-template-columns: 1fr; }
       .feature-panel, .feature-panel img { min-height: auto; }
       .feature-panel img { aspect-ratio: 1 / 1; }
+      .compact-visual {
+        width: 86%;
+        margin: 0 auto;
+      }
     }
     @media (max-width: 640px) {
       .wrap { width: min(100% - 48px, 1120px); }
@@ -354,7 +365,7 @@
 
   <section class="wrap">
     <div class="feature-split">
-      <div class="feature-panel">
+      <div class="feature-panel compact-visual">
         <img src="creator-brief-assets/apple-laptop-hook.jpg" alt="支架挂在笔记本屏幕边缘">
       </div>
       <div class="feature-panel feature-copy">
