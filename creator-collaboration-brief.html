@@ -151,6 +151,56 @@
       color: var(--muted);
       font-size: 18px;
     }
+    .generation-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 14px;
+      align-content: center;
+    }
+    .generation-card {
+      min-height: 492px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f5f5f7;
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, .06);
+    }
+    .generation-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 492px;
+      object-fit: cover;
+    }
+    .generation-card.second img {
+      object-fit: contain;
+      padding: 18px;
+      background: #fff;
+    }
+    .generation-label {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      z-index: 1;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, .78);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .generation-card.second .generation-label {
+      background: var(--accent);
+    }
+    .upgrade-list {
+      margin: 6px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .upgrade-list li {
+      margin: 7px 0;
+    }
     .callout {
       position: absolute;
       right: 7%;
@@ -305,6 +355,8 @@
       .feature-split, .notes { grid-template-columns: 1fr; }
       .feature-panel, .feature-panel img { min-height: auto; }
       .feature-panel img { aspect-ratio: 1 / 1; }
+      .generation-compare { grid-template-columns: 1fr 1fr; }
+      .generation-card, .generation-card img { min-height: 340px; }
       .compact-visual {
         width: 86%;
         margin: 0 auto;
@@ -320,6 +372,8 @@
       p, span, li { word-break: break-all; }
       section { padding: 26px 0; }
       .grid, .timeline, .hooks, .cta-list { grid-template-columns: 1fr; }
+      .generation-compare { grid-template-columns: 1fr; }
+      .generation-card, .generation-card img { min-height: 300px; }
       .step { grid-template-columns: 1fr; gap: 6px; }
       .tile { min-height: auto; }
       .feature-copy { padding: 24px; }
@@ -419,14 +473,25 @@
 
   <section class="wrap">
     <div class="feature-split">
-      <div class="feature-panel charging-visual">
-        <img src="creator-brief-assets/apple-charging-port.jpg" alt="底部预留充电口">
-        <div class="callout">底部预留充电口</div>
+      <div class="feature-panel generation-compare">
+        <div class="generation-card">
+          <span class="generation-label">一代基础款</span>
+          <img src="creator-brief-assets/apple-main-desk.jpg" alt="一代折叠支架">
+        </div>
+        <div class="generation-card second">
+          <span class="generation-label">二代升级款</span>
+          <img src="creator-brief-assets/gen2-stand.jpg" alt="二代折叠支架">
+        </div>
       </div>
       <div class="feature-panel feature-copy">
-        <h3>充电口要单独给特写。</h3>
-        <p>这个点很适合做转化，因为观众会立刻想到：手机不用从支架上拿下来，也能继续充电。</p>
-        <p>建议画面：手把充电线插上，手机仍然稳稳放在支架上。这个镜头放在 0-5 秒快切里，也可以在中段再重复一次。</p>
+        <h3>一代和二代的对比。</h3>
+        <p>二代是在一代“能立、能挂、能折叠”的基础上继续升级，重点多了底部充电口。手机放在支架上也不用拿下来，边刷、边看、边充电，转化点更直接。</p>
+        <ul class="upgrade-list">
+          <li>新增充电口：手机竖放时也能插线充电。</li>
+          <li>升级承托感：看起来更稳，适合手机和平板画面展示。</li>
+          <li>多场景更强：桌面、电脑边、床头、旅行收纳都能讲。</li>
+          <li>视觉卖点更明显：对比一代更容易让观众觉得“二代更值得买”。</li>
+        </ul>
       </div>
     </div>
   </section>
