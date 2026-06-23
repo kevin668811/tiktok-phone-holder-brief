@@ -77,61 +77,6 @@
       font-size: clamp(18px, 2vw, 24px);
       line-height: 1.45;
     }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
-      gap: 16px;
-      margin-top: 34px;
-      align-items: stretch;
-      text-align: left;
-    }
-    .hero-visual,
-    .hero-facts {
-      border-radius: 8px;
-      overflow: hidden;
-      background: var(--panel);
-      border: 1px solid rgba(0, 0, 0, .05);
-    }
-    .hero-visual {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 520px;
-    }
-    .hero-visual img {
-      width: 100%;
-      height: 100%;
-      min-height: 520px;
-      object-fit: cover;
-      object-position: center 68%;
-      background: #fff;
-    }
-    .hero-facts {
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 18px;
-    }
-    .fact-row {
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--line);
-    }
-    .fact-row:last-child {
-      border-bottom: 0;
-      padding-bottom: 0;
-    }
-    .fact-row strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 20px;
-      line-height: 1.25;
-    }
-    .fact-row span {
-      display: block;
-      color: var(--muted);
-      font-size: 16px;
-    }
     .hero-image {
       margin: 34px auto 0;
       width: min(900px, 100%);
@@ -404,53 +349,6 @@
       color: var(--muted);
       font-size: 15px;
     }
-    .shot-list {
-      display: grid;
-      gap: 10px;
-    }
-    .shot {
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 18px;
-      align-items: start;
-      padding: 18px;
-      border-radius: 8px;
-      background: var(--panel);
-      border: 1px solid rgba(0, 0, 0, .05);
-    }
-    .shot strong {
-      color: var(--accent);
-      font-size: 18px;
-      line-height: 1.25;
-    }
-    .shot span {
-      color: var(--muted);
-      font-size: 17px;
-    }
-    .script-block {
-      padding: 28px;
-      border-radius: 8px;
-      background: #111;
-      color: #fff;
-      font-size: clamp(20px, 2.3vw, 28px);
-      line-height: 1.45;
-      font-weight: 750;
-    }
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 24px;
-    }
-    .badge {
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, .18);
-      color: rgba(255, 255, 255, .88);
-      font-size: 14px;
-      font-weight: 800;
-    }
     .cta {
       text-align: center;
       background: #111;
@@ -497,10 +395,8 @@
     }
     @media (max-width: 900px) {
       .grid, .timeline, .hooks, .cta-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .feature-split, .notes, .hero-grid { grid-template-columns: 1fr; }
+      .feature-split, .notes { grid-template-columns: 1fr; }
       .feature-panel, .feature-panel img { min-height: auto; }
-      .hero-visual, .hero-visual img { min-height: auto; }
-      .hero-visual img { aspect-ratio: 16 / 10; }
       .feature-panel img { aspect-ratio: 1 / 1; }
       .result-visuals img { aspect-ratio: auto; }
       .generation-compare { grid-template-columns: 1fr 1fr; }
@@ -517,17 +413,16 @@
       .title-desktop { display: none; }
       .title-mobile { display: inline; }
       .lead { font-size: 18px; max-width: 320px; }
-      p, span, li { word-break: normal; }
+      p, span, li { word-break: break-all; }
       section { padding: 26px 0; }
       .grid, .timeline, .hooks, .cta-list { grid-template-columns: 1fr; }
       .generation-compare { grid-template-columns: 1fr; }
       .generation-card, .generation-card img { min-height: 300px; }
-      .hero-grid { text-align: left; }
       .beat img {
         height: auto;
         object-fit: contain;
       }
-      .step, .shot { grid-template-columns: 1fr; gap: 6px; }
+      .step { grid-template-columns: 1fr; gap: 6px; }
       .tile { min-height: auto; }
       .feature-copy { padding: 24px; }
     }
@@ -542,54 +437,34 @@
   <header class="hero wrap">
     <p class="eyebrow">Creator Collaboration Brief · English</p>
     <h1>
-      <span class="title-desktop">Stop using a cup<br>as your phone stand.</span>
-      <span class="title-mobile">Stop using a cup<br>as your phone stand.</span>
+      <span class="title-desktop">A foldable stand that stands,<br>hangs, and travels.</span>
+      <span class="title-mobile">A foldable stand<br>that stands, hangs,<br>and travels.</span>
     </h1>
-    <p class="lead">A creator brief for a foldable silicone phone holder that can stand on a desk, hang beside a laptop, support a tablet, and fold flat for travel.</p>
-    <div class="hero-grid">
-      <div class="hero-visual">
-        <img src="creator-brief-assets/apple-main-desk.jpg" alt="Foldable silicone stand holding a phone on a desk">
-      </div>
-      <div class="hero-facts">
-        <div class="fact-row">
-          <strong>Primary angle</strong>
-          <span>Do not lead with the product name. Lead with the messy desk pain point: the phone never has a good place to sit.</span>
-        </div>
-        <div class="fact-row">
-          <strong>Best-fit audience</strong>
-          <span>Desk workers, students, travelers, creators, and anyone who watches, scrolls, charges, or works beside a laptop.</span>
-        </div>
-        <div class="fact-row">
-          <strong>Key proof points</strong>
-          <span>Flexible silicone body, foldable carry shape, phone and tablet support, laptop-side hanging use, and charging opening.</span>
-        </div>
-        <div class="fact-row">
-          <strong>Content promise</strong>
-          <span>In the first five seconds, viewers should understand stand, hang, fold, carry, and charge.</span>
-        </div>
-      </div>
+    <p class="lead">Do not just explain the product. In the first 5 seconds, show that it solves phone, laptop, tablet, travel, and charging scenarios.</p>
+    <div class="hero-image">
+      <img src="creator-brief-assets/apple-main-desk.jpg" alt="Foldable silicone stand on a desk">
     </div>
   </header>
 
   <section class="wrap">
-    <h2>What The Video Needs To Prove</h2>
-    <p class="section-subtitle">The viewer should see this as a simple desk and travel fix, not just another phone accessory.</p>
+    <h2>Main Selling Points</h2>
+    <p class="section-subtitle">Keep the voiceover natural, like a real useful find. Show what it does right away instead of overexplaining specs.</p>
     <div class="grid">
       <div class="tile">
-        <strong>It fixes the phone-where-do-I-put-it problem</strong>
-        <span>Start with the everyday annoyance: leaning a phone on cups, keyboards, notebooks, or the laptop edge.</span>
+        <strong>Flexible Angles</strong>
+        <span>The bendable body quickly turns into a desk stand or a screen-side hanging stand.</span>
       </div>
       <div class="tile">
-        <strong>It is not only a desk stand</strong>
-        <span>Show both standing and hanging positions so the product feels more useful than a basic phone prop.</span>
+        <strong>Phone And Tablet Use</strong>
+        <span>Do not only show a phone. Tablet shots make the product feel more useful and higher value.</span>
       </div>
       <div class="tile">
-        <strong>It can support more than a phone</strong>
-        <span>Tablet shots help raise perceived value. Keep the angle stable and the shot believable.</span>
+        <strong>Charging Opening</strong>
+        <span>The bottom has space for a charging cable, so the phone can stay on the stand while charging.</span>
       </div>
       <div class="tile">
-        <strong>It folds into something easy to carry</strong>
-        <span>End one scene by folding it flat and dropping it into a bag, pocket, or travel pouch.</span>
+        <strong>Foldable And Portable</strong>
+        <span>It folds down for pockets or bags, making it easy to carry to work, travel, or study spaces.</span>
       </div>
     </div>
   </section>
@@ -601,43 +476,57 @@
         <img class="scene-result" src="creator-brief-assets/multi-scene-stand.jpg" alt="Tablet, laptop, and hanging bracket use cases">
       </div>
       <div class="feature-panel feature-copy">
-        <h3>Main Creator Angle</h3>
-        <p>Open with the problem, then reveal the result. The best version feels like a useful find: one small flexible strip that cleans up the phone, laptop, tablet, charging, and travel setup.</p>
-        <div class="script-block">"I thought this was just a silicone strip, but it actually fixed where my phone sits on my desk."</div>
+        <h3>Show The Result First</h3>
+        <p>The first shot should immediately show the phone mounted beside a laptop or on a desk, so viewers understand the use case right away.</p>
       </div>
     </div>
   </section>
 
   <section class="wrap">
-    <h2>Recommended Shot Flow</h2>
-    <p class="section-subtitle">For a 20-30 second creator video, keep the scenes tactile: bend, place, hang, charge, fold, carry.</p>
-    <div class="shot-list">
-      <div class="shot">
-        <strong>0-3s</strong>
-        <span>Show the phone awkwardly leaning on a cup, keyboard, or laptop. Cut fast to the stand holding it properly.</span>
-      </div>
-      <div class="shot">
-        <strong>3-7s</strong>
-        <span>Bend the silicone body by hand and place the phone on the desk stand angle.</span>
-      </div>
-      <div class="shot">
-        <strong>7-12s</strong>
-        <span>Hook the stand on the side of a laptop or monitor and place the phone beside the screen.</span>
-      </div>
-      <div class="shot">
-        <strong>12-18s</strong>
-        <span>Show the tablet setup and the charging opening while the phone stays upright.</span>
-      </div>
-      <div class="shot">
-        <strong>18-25s</strong>
-        <span>Fold it flat, drop it into a bag, then finish with a clean desk setup and product-link CTA.</span>
-      </div>
+    <h2>Opening Visuals</h2>
+    <p class="section-subtitle">For the first 5 seconds, choose one or two different scenes. Keep the visuals faster than the voiceover.</p>
+    <div class="timeline">
+      <article class="beat">
+        <img src="creator-brief-assets/apple-main-desk.jpg" alt="Phone stand scene">
+        <div>
+          <strong>Phone Stand</strong>
+          <p>Show the phone standing on the desk first, so viewers instantly see the result.</p>
+        </div>
+      </article>
+      <article class="beat">
+        <img src="creator-brief-assets/apple-laptop-hook.jpg" alt="Laptop side hanging scene">
+        <div>
+          <strong>Laptop Side Mount</strong>
+          <p>Show the phone beside the laptop to hit the desk-work pain point.</p>
+        </div>
+      </article>
+      <article class="beat">
+        <img src="creator-brief-assets/tablet-dual-stand.png" alt="Tablet stand scene">
+        <div>
+          <strong>Tablet Stand</strong>
+          <p>Cut to a tablet setup to make the product feel more versatile.</p>
+        </div>
+      </article>
+      <article class="beat">
+        <img src="creator-brief-assets/travel-bag-roll.jpg" alt="Folded stand going into a bag">
+        <div>
+          <strong>Travel Carry</strong>
+          <p>Show it folded and placed into a pocket or bag.</p>
+        </div>
+      </article>
+      <article class="beat">
+        <img src="creator-brief-assets/cup-pad-laptop.png" alt="Cup sitting on the foldable stand">
+        <div>
+          <strong>Cup Pad</strong>
+          <p>Show the folded stand temporarily supporting a cup or small desk item.</p>
+        </div>
+      </article>
     </div>
   </section>
 
   <section class="wrap">
     <h2>Opening Hooks</h2>
-    <p class="section-subtitle">Use one line in the first two seconds. Keep the visual moving while the hook lands.</p>
+    <p class="section-subtitle">Pick one hook only. Do not read all three. The visuals should move faster than the voiceover.</p>
     <div class="hooks">
       <div class="hook">
         <small>Pain Point</small>
@@ -651,7 +540,7 @@
       </div>
       <div class="hook">
         <small>Useful Find</small>
-        <p>This little thing fixed the most annoying part of my desk setup.</p>
+        <p>This little thing actually fixed where my phone sits on my desk.</p>
         <span>Best visual: a clean finished desk setup.</span>
       </div>
     </div>
@@ -683,47 +572,39 @@
   </section>
 
   <section class="wrap">
-    <h2>Voiceover Draft</h2>
-    <p class="section-subtitle">Natural creator read, around 25 seconds. Pair each sentence with a visible product action.</p>
-    <div class="script-block">Stop leaning your phone against random cups, keyboards, or the side of your laptop. This foldable silicone stand bends into a desk stand, hangs beside your screen, and even works for tablet shots when you need a bigger setup. The bottom leaves space for charging, so your phone can stay upright while it is plugged in. Then it folds flat and goes straight into your bag for work, school, or travel. If your phone never has a good place to sit, tap the product link and check this one out.</div>
-  </section>
-
-  <section class="wrap">
-    <h2>Do And Do Not Say</h2>
-    <div class="notes">
-      <div class="tile">
-        <strong>Do say</strong>
-        <ul>
-          <li>Foldable silicone phone holder or stand.</li>
-          <li>Works as a desk stand and screen-side hanging stand.</li>
-          <li>Charging opening lets the phone stay upright while plugged in.</li>
-          <li>Useful for desk, bedside, school, work, and travel scenes.</li>
-          <li>Show tablet use only when the shot looks stable.</li>
-        </ul>
-      </div>
-      <div class="tile">
-        <strong>Do not say</strong>
-        <ul>
-          <li>Starting with packaging or a slow unboxing.</li>
-          <li>Absolute claims like "never falls" or "100% non-slip."</li>
-          <li>Medical claims such as fixing posture or neck pain.</li>
-          <li>Do not imply it replaces heavy-duty tablet stands.</li>
-          <li>Do not show unstable shots that make the product look weak.</li>
-        </ul>
+    <div class="cta">
+      <h2>CTA Direction</h2>
+      <p>Keep the ending natural, like a creator recommendation. The goal is to guide viewers to tap the product link, not to sound like a hard ad.</p>
+      <div class="cta-list">
+        <div>If you want your phone to stay in one spot on your desk, tap the cart and check it out.</div>
+        <div>Desk, bedside, travel, and laptop setup. The product link is right there.</div>
+        <div>If your phone never has a good place to sit, this is worth trying.</div>
       </div>
     </div>
   </section>
 
   <section class="wrap">
-    <div class="cta">
-      <h2>Creator Deliverable Checklist</h2>
-      <p>Deliver one vertical TikTok video, 20-30 seconds, native creator style. Include the desk pain point, hand-bending proof, phone stand use, laptop-side hanging use, charging opening, folded travel carry, and a clear product-link CTA.</p>
-      <div class="badge-row">
-        <span class="badge">Vertical 9:16</span>
-        <span class="badge">Hook in 0-2s</span>
-        <span class="badge">Hands-on demo</span>
-        <span class="badge">Charging shot</span>
-        <span class="badge">Travel fold shot</span>
+    <h2>Shooting Notes</h2>
+    <div class="notes">
+      <div class="tile">
+        <strong>Must Shoot</strong>
+        <ul>
+          <li>Fast scene cuts in the first 5 seconds.</li>
+          <li>Hands bending the stand.</li>
+          <li>Phone mounted beside a laptop.</li>
+          <li>Tablet support shot.</li>
+          <li>Close-up of charging while the phone is on the stand.</li>
+        </ul>
+      </div>
+      <div class="tile">
+        <strong>Avoid</strong>
+        <ul>
+          <li>Starting with packaging or a slow unboxing.</li>
+          <li>Only saying the product name in the first few seconds.</li>
+          <li>Absolute claims like "never falls" or "100% non-slip."</li>
+          <li>Medical claims such as fixing posture or neck pain.</li>
+          <li>Tablet shots that look shaky or unstable.</li>
+        </ul>
       </div>
     </div>
   </section>
