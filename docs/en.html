@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foldable Silicone Stand Creator Brief</title>
+  <style>
+    :root {
+      --ink: #1d1d1f;
+      --muted: #6e6e73;
+      --line: #d2d2d7;
+      --page: #f5f5f7;
+      --panel: #fff;
+      --accent: #ff6a00;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background: var(--page);
+      line-height: 1.55;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+    p, span, strong, h1, h2, h3, li { overflow-wrap: anywhere; }
+    img { display: block; max-width: 100%; }
+    main { overflow: hidden; }
+    .wrap {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+    .hero {
+      text-align: center;
+      padding: 58px 0 28px;
+    }
+    .language-switch {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      padding-top: 18px;
+    }
+    .language-switch a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .68);
+      border: 1px solid rgba(0, 0, 0, .06);
+    }
+    .language-switch a.active {
+      color: #fff;
+      background: var(--ink);
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 0 auto;
+      max-width: 900px;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.04;
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+    .title-mobile { display: none; }
+    .lead {
+      max-width: 760px;
+      margin: 20px auto 0;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.45;
+    }
+    .hero-image {
+      margin: 34px auto 0;
+      width: min(900px, 100%);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, .12);
+    }
+    .hero-image img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center 68%;
+    }
+    section { padding: 34px 0; }
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.08;
+      text-align: center;
+      font-weight: 800;
+    }
+    .section-subtitle {
+      max-width: 740px;
+      margin: -4px auto 24px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 18px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .tile {
+      min-height: 180px;
+      padding: 22px;
+      border-radius: 8px;
+      background: var(--panel);
+      border: 1px solid rgba(0, 0, 0, .05);
+    }
+    .tile strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+    .tile span {
+      display: block;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .feature-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .feature-panel {
+      min-height: 520px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--panel);
+      position: relative;
+    }
+    .feature-panel img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+    }
+    .compact-visual {
+      align-self: center;
+      min-height: 440px;
+    }
+    .compact-visual img {
+      min-height: 440px;
+    }
+    .result-visuals {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 10px;
+      padding: 10px;
+      background: var(--panel);
+    }
+    .result-visuals img {
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      border-radius: 6px;
+      background: #fff;
+    }
+    .result-visuals .primary-result {
+      aspect-ratio: 16 / 11;
+      object-fit: cover;
+    }
+    .result-visuals .scene-result {
+      aspect-ratio: 970 / 600;
+      object-fit: contain;
+    }
+    .feature-copy {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .feature-copy h3 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.08;
+    }
+    .feature-copy p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .generation-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 14px;
+      align-content: center;
+    }
+    .generation-card {
+      min-height: 492px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f5f5f7;
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, .06);
+    }
+    .generation-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 492px;
+      object-fit: contain;
+      padding: 18px;
+      background: #fff;
+    }
+    .generation-label {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      z-index: 1;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, .78);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .generation-card.second .generation-label {
+      background: rgba(0, 0, 0, .78);
+    }
+    .generation-card.first .generation-label {
+      background: var(--accent);
+    }
+    .upgrade-list {
+      margin: 6px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .upgrade-list li {
+      margin: 7px 0;
+    }
+    .callout {
+      position: absolute;
+      right: 7%;
+      bottom: 6%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-weight: 700;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, .55);
+    }
+    .callout::before {
+      content: "";
+      width: 26px;
+      height: 26px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 999px rgba(0, 0, 0, .08), 0 0 18px rgba(255, 106, 0, .85);
+      background: rgba(255, 106, 0, .22);
+    }
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .beat {
+      background: var(--panel);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, .05);
+    }
+    .beat img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      background: #fff;
+    }
+    .beat div { padding: 14px; }
+    .time {
+      display: block;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .beat strong {
+      display: block;
+      font-size: 17px;
+      line-height: 1.25;
+      margin-bottom: 5px;
+    }
+    .beat p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .structure {
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 28px;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+    .step:first-child { border-top: 0; padding-top: 0; }
+    .step:last-child { padding-bottom: 0; }
+    .step b {
+      color: var(--accent);
+      font-size: 18px;
+    }
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .hooks {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .hook {
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 22px;
+      border: 1px solid rgba(0, 0, 0, .05);
+    }
+    .hook small {
+      color: var(--accent);
+      font-weight: 800;
+    }
+    .hook p {
+      margin: 10px 0 0;
+      font-size: 21px;
+      line-height: 1.35;
+      font-weight: 750;
+    }
+    .hook span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .cta {
+      text-align: center;
+      background: #111;
+      color: #fff;
+      border-radius: 8px;
+      padding: 44px 28px;
+    }
+    .cta h2 { color: #fff; }
+    .cta p {
+      max-width: 720px;
+      margin: 0 auto 18px;
+      color: rgba(255, 255, 255, .78);
+      font-size: 19px;
+    }
+    .cta-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 24px;
+      text-align: left;
+    }
+    .cta-list div {
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 8px;
+      padding: 16px;
+      color: rgba(255, 255, 255, .9);
+    }
+    .notes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .notes ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    .notes li { margin: 8px 0; }
+    footer {
+      padding: 24px 0 52px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+    @media (max-width: 900px) {
+      .grid, .timeline, .hooks, .cta-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .feature-split, .notes { grid-template-columns: 1fr; }
+      .feature-panel, .feature-panel img { min-height: auto; }
+      .feature-panel img { aspect-ratio: 1 / 1; }
+      .result-visuals img { aspect-ratio: auto; }
+      .generation-compare { grid-template-columns: 1fr 1fr; }
+      .generation-card, .generation-card img { min-height: 340px; }
+      .compact-visual {
+        width: 86%;
+        margin: 0 auto;
+      }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 48px, 1120px); }
+      .hero { padding-top: 38px; }
+      h1 { font-size: 36px; line-height: 1.08; }
+      .title-desktop { display: none; }
+      .title-mobile { display: inline; }
+      .lead { font-size: 18px; max-width: 320px; }
+      p, span, li { word-break: break-all; }
+      section { padding: 26px 0; }
+      .grid, .timeline, .hooks, .cta-list { grid-template-columns: 1fr; }
+      .generation-compare { grid-template-columns: 1fr; }
+      .generation-card, .generation-card img { min-height: 300px; }
+      .beat img {
+        height: auto;
+        object-fit: contain;
+      }
+      .step { grid-template-columns: 1fr; gap: 6px; }
+      .tile { min-height: auto; }
+      .feature-copy { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header class="hero wrap">
+    <p class="eyebrow">Creator Collaboration Brief · English</p>
+    <h1>
+      <span class="title-desktop">A foldable stand that stands,<br>hangs, and travels.</span>
+      <span class="title-mobile">A foldable stand<br>that stands, hangs,<br>and travels.</span>
+    </h1>
+    <p class="lead">Do not just explain the product. In the first 5 seconds, show that it solves phone, laptop, tablet, travel, and charging scenarios.</p>
+    <div class="hero-image">
+      <img src="creator-brief-assets/apple-main-desk.jpg" alt="Foldable silicone stand on a desk">
+    </div>
+  </header>
+
+  <section class="wrap">
+    <h2>Main Selling Points</h2>
+    <p class="section-subtitle">Keep the voiceover natural, like a real useful find. Show what it does right away instead of overexplaining specs.</p>
+    <div class="grid">
+      <div class="tile">
+        <strong>Flexible Angles</strong>
+        <span>The bendable body quickly turns into a desk stand or a screen-side hanging stand.</span>
+      </div>
+      <div class="tile">
+        <strong>Phone And Tablet Use</strong>
+        <span>Do not only show a phone. Tablet shots make the product feel more useful and higher value.</span>
+      </div>
+      <div class="tile">
+        <strong>Charging Opening</strong>
+        <span>The bottom has space for a charging cable, so the phone can stay on the stand while charging.</span>
+      </div>
+      <div class="tile">
+        <strong>Foldable And Portable</strong>
+        <span>It folds down for pockets or bags, making it easy to carry to work, travel, or study spaces.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="feature-split">
+      <div class="feature-panel compact-visual result-visuals">
+        <img class="primary-result" src="creator-brief-assets/apple-laptop-hook.jpg" alt="Stand hanging on the side of a laptop screen">
+        <img class="scene-result" src="creator-brief-assets/multi-scene-stand.jpg" alt="Tablet, laptop, and hanging bracket use cases">
+      </div>
+      <div class="feature-panel feature-copy">
+        <h3>Show The Result First</h3>
+        <p>The first shot should immediately show the phone mounted beside a laptop or on a desk, so viewers understand the use case right away.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>Opening Visuals</h2>
+    <p class="section-subtitle">For the first 5 seconds, choose one or two different scenes. Keep the visuals faster than the voiceover.</p>
+    <div class="timeline">
+      <article class="beat">
+        <img src="creator-brief-assets/apple-main-desk.jpg" alt="Phone stand scene">
+        <div>
+          <strong>Phone Stand</strong>
+          <p>Show the phone standing on the desk first, so viewers instantly see the result.</p>
+        </div>
+      </article>
+      <article class="beat">
+        <img src="creator-brief-assets/apple-laptop-hook.jpg" alt="Laptop side hanging scene">
+        <div>
+          <strong>Laptop Side Mount</strong>
+          <p>Show the phone beside the laptop to hit the desk-work pain point.</p>
+        </div>
+      </article>
+      <article class="beat">
+        <img src="creator-brief-assets/tablet-dual-stand.png" alt="Tablet stand scene">
+        <div>
+          <strong>Tablet Stand</strong>
+          <p>Cut to a tablet setup to make the product feel more versatile.</p>
+        </div>
+      </article>
+      <article class="beat">
+        <img src="creator-brief-assets/travel-bag-roll.jpg" alt="Folded stand going into a bag">
+        <div>
+          <strong>Travel Carry</strong>
+          <p>Show it folded and placed into a pocket or bag.</p>
+        </div>
+      </article>
+      <article class="beat">
+        <img src="creator-brief-assets/cup-pad-laptop.png" alt="Cup sitting on the foldable stand">
+        <div>
+          <strong>Cup Pad</strong>
+          <p>Show the folded stand temporarily supporting a cup or small desk item.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>Opening Hooks</h2>
+    <p class="section-subtitle">Pick one hook only. Do not read all three. The visuals should move faster than the voiceover.</p>
+    <div class="hooks">
+      <div class="hook">
+        <small>Pain Point</small>
+        <p>Stop leaning your phone against random cups, keyboards, or the side of your laptop.</p>
+        <span>Best visual: the phone mounted steadily beside the laptop.</span>
+      </div>
+      <div class="hook">
+        <small>Surprise</small>
+        <p>I thought this was just a silicone strip, but it works for my phone, tablet, and laptop setup.</p>
+        <span>Best visual: quick cuts through three different use cases.</span>
+      </div>
+      <div class="hook">
+        <small>Useful Find</small>
+        <p>This little thing actually fixed where my phone sits on my desk.</p>
+        <span>Best visual: a clean finished desk setup.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="feature-split">
+      <div class="feature-panel generation-compare">
+        <div class="generation-card second">
+          <span class="generation-label">Basic Version</span>
+          <img src="creator-brief-assets/gen2-stand.jpg" alt="Basic foldable stand">
+        </div>
+        <div class="generation-card first">
+          <span class="generation-label">Upgraded Version</span>
+          <img src="creator-brief-assets/gen2-material-structure.jpg" alt="Upgraded material structure">
+        </div>
+      </div>
+      <div class="feature-panel feature-copy">
+        <h3>Basic Version Vs. Upgraded Version.</h3>
+        <p>The upgraded version builds on the original stand, hang, and fold design, with a more practical bottom charging opening. Viewers can instantly understand the upgrade: the phone can stay on the stand while watching, scrolling, and charging.</p>
+        <ul class="upgrade-list">
+          <li>Charging opening: the phone can stay upright while plugged in.</li>
+          <li>Stronger support impression: better for phone and tablet demonstration shots.</li>
+          <li>More scenes to film: desk, laptop side, bedside, travel, and storage.</li>
+          <li>Clearer upgrade story: the comparison makes the new version feel more worth buying.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="cta">
+      <h2>CTA Direction</h2>
+      <p>Keep the ending natural, like a creator recommendation. The goal is to guide viewers to tap the product link, not to sound like a hard ad.</p>
+      <div class="cta-list">
+        <div>If you want your phone to stay in one spot on your desk, tap the cart and check it out.</div>
+        <div>Desk, bedside, travel, and laptop setup. The product link is right there.</div>
+        <div>If your phone never has a good place to sit, this is worth trying.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>Shooting Notes</h2>
+    <div class="notes">
+      <div class="tile">
+        <strong>Must Shoot</strong>
+        <ul>
+          <li>Fast scene cuts in the first 5 seconds.</li>
+          <li>Hands bending the stand.</li>
+          <li>Phone mounted beside a laptop.</li>
+          <li>Tablet support shot.</li>
+          <li>Close-up of charging while the phone is on the stand.</li>
+        </ul>
+      </div>
+      <div class="tile">
+        <strong>Avoid</strong>
+        <ul>
+          <li>Starting with packaging or a slow unboxing.</li>
+          <li>Only saying the product name in the first few seconds.</li>
+          <li>Absolute claims like "never falls" or "100% non-slip."</li>
+          <li>Medical claims such as fixing posture or neck pain.</li>
+          <li>Tablet shots that look shaky or unstable.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="wrap">TikTok Shop Foldable Silicone Stand · Creator Collaboration Brief</footer>
+</body>
+</html>
