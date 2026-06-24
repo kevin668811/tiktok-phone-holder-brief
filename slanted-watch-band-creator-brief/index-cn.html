@@ -391,6 +391,53 @@
     .hook:nth-child(3) { background: var(--green); }
     .hook:nth-child(4) { background: var(--red); }
 
+    .content-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: flow-step;
+    }
+
+    .flow-card {
+      min-height: 270px;
+      padding: 22px;
+      border-radius: 8px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      counter-increment: flow-step;
+    }
+
+    .flow-card h3 {
+      margin: 0 0 18px;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .flow-card h3::before {
+      content: counter(flow-step) ". ";
+      color: var(--red);
+    }
+
+    .flow-branch {
+      min-height: 76px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .flow-branch strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .flow-branch span {
+      display: block;
+      min-height: 28px;
+      color: #a0a3a8;
+      font-size: 15px;
+    }
+
     .do-dont {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -505,6 +552,7 @@
 
       .grid,
       .shot-list,
+      .content-flow,
       .reference-grid,
       .quote-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -550,6 +598,7 @@
       .grid,
       .shot-list,
       .hooks,
+      .content-flow,
       .reference-grid,
       .quote-grid {
         grid-template-columns: 1fr;
@@ -636,15 +685,77 @@
       </div>
     </section>
 
-    <section>
+    <section id="content-flow">
       <div class="wrap">
-        <h2>开头 Hook 选项</h2>
-        <p class="section-subtitle">前 2 秒只用一句话，必须视觉化，并且带一点怀疑感。</p>
-        <div class="hooks">
-          <div class="hook">“我真的希望我的粉丝都刷到这条表带。”</div>
-          <div class="hook">“我没想到一条表带还能成为聊天话题。”</div>
-          <div class="hook">“如果你受不了东西歪着，现在可以划走了。”</div>
-          <div class="hook">“如果你运动时会戴手表，看看这个。”</div>
+        <h2>内容制作顺序</h2>
+        <p class="section-subtitle">按照六个板块推进内容，每个板块预留两个分支方向，后续可逐步补充。</p>
+        <div class="content-flow">
+          <div class="flow-card">
+            <h3>先制造疑问</h3>
+            <div class="flow-branch">
+              <strong>分支方向 1</strong>
+              <span>待补充</span>
+            </div>
+            <div class="flow-branch">
+              <strong>分支方向 2</strong>
+              <span>待补充</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>再制造争议</h3>
+            <div class="flow-branch">
+              <strong>分支方向 1</strong>
+              <span>待补充</span>
+            </div>
+            <div class="flow-branch">
+              <strong>分支方向 2</strong>
+              <span>待补充</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>再解释功能</h3>
+            <div class="flow-branch">
+              <strong>分支方向 1</strong>
+              <span>待补充</span>
+            </div>
+            <div class="flow-branch">
+              <strong>分支方向 2</strong>
+              <span>待补充</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>增加材质说明</h3>
+            <div class="flow-branch">
+              <strong>分支方向 1</strong>
+              <span>待补充</span>
+            </div>
+            <div class="flow-branch">
+              <strong>分支方向 2</strong>
+              <span>待补充</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>再放大社交价值</h3>
+            <div class="flow-branch">
+              <strong>分支方向 1</strong>
+              <span>待补充</span>
+            </div>
+            <div class="flow-branch">
+              <strong>分支方向 2</strong>
+              <span>待补充</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>最后补购买理由</h3>
+            <div class="flow-branch">
+              <strong>分支方向 1</strong>
+              <span>待补充</span>
+            </div>
+            <div class="flow-branch">
+              <strong>分支方向 2</strong>
+              <span>待补充</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
