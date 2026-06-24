@@ -391,6 +391,53 @@
     .hook:nth-child(3) { background: var(--green); }
     .hook:nth-child(4) { background: var(--red); }
 
+    .content-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: flow-step;
+    }
+
+    .flow-card {
+      min-height: 180px;
+      padding: 22px;
+      border-radius: 8px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      counter-increment: flow-step;
+    }
+
+    .flow-card h3 {
+      margin: 0 0 18px;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .flow-card h3::before {
+      content: counter(flow-step) ". ";
+      color: var(--red);
+    }
+
+    .flow-branch {
+      min-height: 76px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .flow-branch strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .flow-branch span {
+      display: block;
+      min-height: 28px;
+      color: #a0a3a8;
+      font-size: 15px;
+    }
+
     .do-dont {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -505,6 +552,7 @@
 
       .grid,
       .shot-list,
+      .content-flow,
       .reference-grid,
       .quote-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -550,6 +598,7 @@
       .grid,
       .shot-list,
       .hooks,
+      .content-flow,
       .reference-grid,
       .quote-grid {
         grid-template-columns: 1fr;
@@ -636,15 +685,53 @@
       </div>
     </section>
 
-    <section>
+    <section id="content-flow">
       <div class="wrap">
-        <h2>Opciones de hook inicial</h2>
-        <p class="section-subtitle">Usa una sola frase en los primeros dos segundos. Hazla visual y un poco escéptica.</p>
-        <div class="hooks">
-          <div class="hook">“De verdad espero que todos mis seguidores vean esta correa.”</div>
-          <div class="hook">“No esperaba que una correa pudiera iniciar tantas conversaciones.”</div>
-          <div class="hook">“Si no soportas las cosas torcidas, ya puedes seguir deslizando.”</div>
-          <div class="hook">“Si usas reloj cuando entrenas, mira esto.”</div>
+        <h2>Secuencia de creación de contenido</h2>
+        <p class="section-subtitle">Avanza por seis bloques en orden, llevando al público de la curiosidad a una razón de compra.</p>
+        <div class="content-flow">
+          <div class="flow-card">
+            <h3>Genera curiosidad</h3>
+            <div class="flow-branch">
+              <strong>Núcleo</strong>
+              <span>¿Por qué está torcido mi reloj?</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Genera debate</h3>
+            <div class="flow-branch">
+              <strong>Núcleo</strong>
+              <span>¿Es un diseño inteligente o simplemente raro?</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Explica la función</h3>
+            <div class="flow-branch">
+              <strong>Núcleo</strong>
+              <span>Más fácil de mirar, con menos giro de muñeca.</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Añade detalles del material</h3>
+            <div class="flow-branch">
+              <strong>Núcleo</strong>
+              <span>Suave, cómoda, resistente al agua y apta para el uso diario.</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Amplifica el valor social</h3>
+            <div class="flow-branch">
+              <strong>Núcleo</strong>
+              <span>La gente preguntará por ella.</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Cierra con razones de compra</h3>
+            <div class="flow-branch">
+              <strong>Núcleo</strong>
+              <span>Colores, packs, tamaños compatibles y precio promocional.</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

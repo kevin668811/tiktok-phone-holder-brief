@@ -391,6 +391,53 @@
     .hook:nth-child(3) { background: var(--green); }
     .hook:nth-child(4) { background: var(--red); }
 
+    .content-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: flow-step;
+    }
+
+    .flow-card {
+      min-height: 180px;
+      padding: 22px;
+      border-radius: 8px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      counter-increment: flow-step;
+    }
+
+    .flow-card h3 {
+      margin: 0 0 18px;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .flow-card h3::before {
+      content: counter(flow-step) ". ";
+      color: var(--red);
+    }
+
+    .flow-branch {
+      min-height: 76px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .flow-branch strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .flow-branch span {
+      display: block;
+      min-height: 28px;
+      color: #a0a3a8;
+      font-size: 15px;
+    }
+
     .do-dont {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -505,6 +552,7 @@
 
       .grid,
       .shot-list,
+      .content-flow,
       .reference-grid,
       .quote-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -550,6 +598,7 @@
       .grid,
       .shot-list,
       .hooks,
+      .content-flow,
       .reference-grid,
       .quote-grid {
         grid-template-columns: 1fr;
@@ -636,15 +685,53 @@
       </div>
     </section>
 
-    <section>
+    <section id="content-flow">
       <div class="wrap">
-        <h2>Opening Hook Options</h2>
-        <p class="section-subtitle">Use one line in the first two seconds. Keep it visual and slightly skeptical.</p>
-        <div class="hooks">
-          <div class="hook">“I really hope everyone who follows me sees this band.”</div>
-          <div class="hook">“I did not expect a watch band to become a conversation starter.”</div>
-          <div class="hook">“If crooked things bother you, you can scroll now.”</div>
-          <div class="hook">“If you wear a watch while working out, look at this.”</div>
+        <h2>Content Production Sequence</h2>
+        <p class="section-subtitle">Move through six sections in order, taking the viewer naturally from curiosity to a reason to buy.</p>
+        <div class="content-flow">
+          <div class="flow-card">
+            <h3>Create Curiosity</h3>
+            <div class="flow-branch">
+              <strong>Core</strong>
+              <span>Why is my watch crooked?</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Create Debate</h3>
+            <div class="flow-branch">
+              <strong>Core</strong>
+              <span>Is this smart design, or is it just weird?</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Explain the Function</h3>
+            <div class="flow-branch">
+              <strong>Core</strong>
+              <span>Easier to read, with less wrist twisting.</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Add Material Details</h3>
+            <div class="flow-branch">
+              <strong>Core</strong>
+              <span>Soft, comfortable, water-resistant, and suitable for everyday wear.</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Amplify the Social Value</h3>
+            <div class="flow-branch">
+              <strong>Core</strong>
+              <span>People will ask about it.</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Finish with Reasons to Buy</h3>
+            <div class="flow-branch">
+              <strong>Core</strong>
+              <span>Colors, multipacks, compatible sizes, and promotional pricing.</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
