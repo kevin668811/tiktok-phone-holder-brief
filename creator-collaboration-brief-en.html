@@ -148,6 +148,15 @@
       min-height: 520px;
       object-fit: cover;
     }
+    .feature-panel video {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      object-fit: cover;
+      border-radius: 6px;
+      background: #000;
+      display: block;
+    }
     .compact-visual {
       align-self: center;
       min-height: 440px;
@@ -156,9 +165,6 @@
       min-height: 440px;
     }
     .result-visuals {
-      display: grid;
-      grid-template-rows: 1fr auto;
-      gap: 10px;
       padding: 10px;
       background: var(--panel);
     }
@@ -396,8 +402,9 @@
     @media (max-width: 900px) {
       .grid, .timeline, .hooks, .cta-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .feature-split, .notes { grid-template-columns: 1fr; }
-      .feature-panel, .feature-panel img { min-height: auto; }
+      .feature-panel, .feature-panel img, .feature-panel video { min-height: auto; }
       .feature-panel img { aspect-ratio: 1 / 1; }
+      .feature-panel video { aspect-ratio: 9 / 16; }
       .result-visuals img { aspect-ratio: auto; }
       .generation-compare { grid-template-columns: 1fr 1fr; }
       .generation-card, .generation-card img { min-height: 340px; }
@@ -456,8 +463,7 @@
   <section class="wrap">
     <div class="feature-split">
       <div class="feature-panel compact-visual result-visuals">
-        <img class="primary-result" src="creator-brief-assets/apple-laptop-hook.jpg" alt="Stand hanging on the side of a laptop screen">
-        <img class="scene-result" src="creator-brief-assets/multi-scene-stand.jpg" alt="Tablet, laptop, and hanging bracket use cases">
+        <video src="creator-brief-assets/show-result-first.mp4" autoplay muted loop playsinline controls preload="metadata" aria-label="Show the result first demo video"></video>
       </div>
       <div class="feature-panel feature-copy">
         <h3>Show The Result First</h3>
