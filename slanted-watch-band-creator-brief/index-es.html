@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brief para creadores - Correa inclinada para smartwatch</title>
+  <style>
+    :root {
+      --ink: #181818;
+      --muted: #666a70;
+      --page: #f4f5f2;
+      --panel: #ffffff;
+      --line: rgba(24, 24, 24, .12);
+      --yellow: #f4c426;
+      --red: #d83434;
+      --blue: #1f4f86;
+      --green: #61705a;
+    }
+
+    * {
+      box-sizing: border-box;
+      min-width: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--page);
+      line-height: 1.5;
+      letter-spacing: 0;
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
+    h1, h2, h3, p, span, strong, li, .hook, .script-block {
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .language-switch {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      padding-top: 18px;
+    }
+
+    .language-switch a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .75);
+      border: 1px solid var(--line);
+    }
+
+    .language-switch a.active {
+      color: #fff;
+      background: var(--ink);
+    }
+
+    .hero {
+      padding: 54px 0 30px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    h1 {
+      max-width: 930px;
+      margin: 0 auto;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.04;
+      font-weight: 850;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 20px auto 0;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.45;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
+      gap: 16px;
+      margin-top: 34px;
+      align-items: stretch;
+    }
+
+    .hero-visual,
+    .hero-facts {
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 520px;
+    }
+
+    .hero-visual img,
+    .hero-visual video {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: contain;
+      padding: 20px;
+      background: #fff;
+      display: block;
+    }
+
+    .hero-facts {
+      text-align: left;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .facts-title {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: 850;
+    }
+
+    .fact-row {
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fact-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .fact-row strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .fact-row span {
+      display: block;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .fact-subtitle {
+      margin: 0 0 -2px;
+      color: var(--red);
+      font-size: 22px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    section { padding: 34px 0; }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.08;
+      text-align: center;
+      font-weight: 850;
+    }
+
+    .section-subtitle {
+      max-width: 760px;
+      margin: -4px auto 24px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .grid-three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .tile {
+      min-height: 190px;
+      padding: 22px;
+      border-radius: 8px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .tile strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .tile span {
+      display: block;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .tile-image {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+      margin-top: 16px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .panel {
+      border-radius: 8px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .panel-copy {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .panel-copy h3 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.08;
+    }
+
+    .panel-copy p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .panel-copy ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .panel-copy li + li { margin-top: 8px; }
+
+    .reference-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+    }
+
+    .reference-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .reference-grid .panel img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+    }
+
+    .caption {
+      padding: 12px 16px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .script-block {
+      padding: 26px;
+      border-left: 7px solid var(--yellow);
+      background: #fff;
+      border-radius: 8px;
+      border-top: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-size: 22px;
+      line-height: 1.45;
+      font-weight: 750;
+    }
+
+    .shot-list {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      counter-reset: shot;
+    }
+
+    .shot {
+      min-height: 220px;
+      padding: 18px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      position: relative;
+    }
+
+    .shot::before {
+      counter-increment: shot;
+      content: counter(shot);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 18px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--ink);
+      font-weight: 800;
+    }
+
+    .shot strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .shot span {
+      display: block;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .hooks {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .hook {
+      min-height: 120px;
+      padding: 22px;
+      border-radius: 8px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 22px;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .hook:nth-child(2) { background: var(--blue); }
+    .hook:nth-child(3) { background: var(--green); }
+    .hook:nth-child(4) { background: var(--red); }
+
+    .content-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: flow-step;
+    }
+
+    .flow-card {
+      min-height: 180px;
+      padding: 22px;
+      border-radius: 8px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      counter-increment: flow-step;
+    }
+
+    .flow-card h3 {
+      margin: 0 0 18px;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .flow-card h3::before {
+      content: counter(flow-step) ". ";
+      color: var(--red);
+    }
+
+    .flow-branch {
+      min-height: 76px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .flow-branch strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .flow-branch span {
+      display: block;
+      min-height: 28px;
+      color: #a0a3a8;
+      font-size: 15px;
+    }
+
+    .flow-reference {
+      max-width: 420px;
+      margin: 18px auto 0;
+      padding: 16px;
+      border-radius: 8px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .flow-reference h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .flow-reference video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #111;
+    }
+
+    .do-dont {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .list-panel {
+      padding: 26px;
+      border-radius: 8px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .list-panel h3 {
+      margin: 0 0 16px;
+      font-size: 28px;
+    }
+
+    .list-note {
+      margin: -6px 0 14px;
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 750;
+    }
+
+    .list-panel ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .list-panel li + li { margin-top: 9px; }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .quote {
+      padding: 22px;
+      border-radius: 8px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      min-height: 180px;
+    }
+
+    .quote strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .quote p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .cta {
+      padding: 46px 28px;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--ink);
+      text-align: center;
+    }
+
+    .cta h2 {
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .cta p {
+      max-width: 740px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, .78);
+      font-size: 19px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 18px;
+    }
+
+    .badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .2);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .split,
+      .do-dont {
+        grid-template-columns: 1fr;
+      }
+
+      .grid,
+      .shot-list,
+      .content-flow,
+      .reference-grid,
+      .quote-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .reference-image img,
+      .hero-visual,
+      .hero-visual img,
+      .hero-visual video {
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .wrap {
+        width: calc(100% - 24px);
+        max-width: calc(100vw - 24px);
+      }
+      .language-switch { justify-content: center; }
+      .hero { padding-top: 38px; }
+      h1 {
+        font-size: clamp(34px, 10vw, 42px);
+        line-height: 1.08;
+      }
+      .lead {
+        font-size: 17px;
+        max-width: 100%;
+      }
+      .hero-grid {
+        gap: 12px;
+        width: 100%;
+      }
+      .hero-visual,
+      .hero-facts,
+      .panel,
+      .tile,
+      .shot,
+      .quote,
+      .list-panel {
+        width: 100%;
+        max-width: 100%;
+      }
+      .hero-visual img,
+      .hero-visual video { padding: 12px; }
+      .grid,
+      .shot-list,
+      .hooks,
+      .content-flow,
+      .reference-grid,
+      .quote-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-facts,
+      .panel-copy,
+      .list-panel,
+      .script-block {
+        padding: 22px;
+      }
+      .shot { min-height: 0; }
+      .hook { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav class="language-switch" aria-label="Language">
+      <a href="index.html">EN</a>
+      <a class="active" href="index-es.html">Español</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Brief de colaboración para creadores</p>
+        <h1>No digas que está torcida hasta que te la pongas.</h1>
+        <p class="lead">Usa el contraste visual de “parece instalada al revés” para crear un video que detenga el scroll y genere comentarios.</p>
+
+        <div class="hero-grid">
+          <div class="hero-visual">
+            <video src="assets/selling-points-video.mp4" aria-label="Video de puntos clave de la correa inclinada para smartwatch" autoplay muted loop playsinline controls preload="metadata"></video>
+          </div>
+          <div class="hero-facts">
+            <h2 class="facts-title">Puntos clave de venta</h2>
+            <div class="fact-row">
+              <strong>Primero: parece que está “mal”</strong>
+              <span>La forma inclinada no parece una correa normal a primera vista, lo que genera curiosidad, retención y comentarios.</span>
+            </div>
+            <div class="fact-row">
+              <strong>Segundo: la inclinación tiene un propósito</strong>
+              <span>Al entrenar, montar en bicicleta o conducir, puedes mirar la hora sin girar la muñeca deliberadamente.</span>
+            </div>
+            <div class="fact-row">
+              <strong>Ángulo para muñeca izquierda</strong>
+              <span>Esta inclinación se entiende mejor al llevarlo en la muñeca izquierda, especialmente al entrenar, montar en bicicleta o conducir.</span>
+            </div>
+            <div class="fact-subtitle">Beneficios secundarios</div>
+            <div class="fact-row">
+              <strong>Silicona suave</strong>
+              <span>Ligera y cómoda para el uso diario, los desplazamientos y el ejercicio.</span>
+            </div>
+            <div class="fact-row">
+              <strong>Perforaciones transpirables</strong>
+              <span>Ayudan a reducir el calor durante el ejercicio y le dan a la correa un aspecto más ligero y deportivo.</span>
+            </div>
+            <div class="fact-row">
+              <strong>Hebilla más segura</strong>
+              <span>Es menos probable que se afloje durante la actividad, ideal para contenido de running, ciclismo y gimnasio.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Cómo grabar los primeros 3 segundos</h2>
+        <p class="section-subtitle">No expliques demasiado. Haz que el público se pregunte si la correa está instalada al revés.</p>
+        <div class="grid grid-three">
+          <div class="tile">
+            <strong>1. Haz que parezca mal instalada</strong>
+            <span>Empieza directamente con un primer plano de la correa inclinada. No la expliques todavía.</span>
+            <img class="tile-image" src="assets/opening-step-01-wrong.jpg" alt="Primer plano de la correa inclinada que parece mal instalada">
+          </div>
+          <div class="tile">
+            <strong>2. Muéstrala en la muñeca</strong>
+            <span>Ponte la correa y demuestra que no está rota ni instalada incorrectamente.</span>
+            <img class="tile-image" src="assets/opening-step-03-glance.jpg" alt="Correa inclinada puesta en la muñeca">
+          </div>
+          <div class="tile">
+            <strong>3. Mira la hora mientras pedaleas</strong>
+            <span>Muestra cómo se puede ver la hora al montar en bicicleta o conducir sin girar la muñeca.</span>
+            <img class="tile-image" src="assets/opening-step-04-bike.png" alt="Mirando la hora en bicicleta sin girar la muñeca">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content-flow">
+      <div class="wrap">
+        <h2>Secuencia de creación de contenido</h2>
+        <p class="section-subtitle">Avanza por seis bloques en orden, llevando al público de la curiosidad a una razón de compra.</p>
+        <div class="content-flow">
+          <div class="flow-card">
+            <h3>Genera curiosidad</h3>
+            <div class="flow-branch">
+              <strong>Núcleo</strong>
+              <span>¿Por qué está torcido mi reloj?</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Genera debate</h3>
+            <div class="flow-branch">
+              <strong>Núcleo</strong>
+              <span>¿Es un diseño inteligente o simplemente raro?</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Explica la función</h3>
+            <div class="flow-branch">
+              <strong>Núcleo</strong>
+              <span>Más fácil de mirar, con menos giro de muñeca.</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Añade detalles del material</h3>
+            <div class="flow-branch">
+              <strong>Núcleo</strong>
+              <span>Suave, cómoda, resistente al agua y apta para el uso diario.</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Amplifica el valor social</h3>
+            <div class="flow-branch">
+              <strong>Núcleo</strong>
+              <span>La gente preguntará por ella.</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h3>Cierra con razones de compra</h3>
+            <div class="flow-branch">
+              <strong>Núcleo</strong>
+              <span>Colores, packs, tamaños compatibles y precio promocional.</span>
+            </div>
+          </div>
+        </div>
+        <div class="flow-reference">
+          <h3>Video de referencia</h3>
+          <video src="assets/content-flow-reference.mp4" aria-label="Video de referencia para la secuencia de creación de contenido" controls playsinline preload="metadata"></video>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Palabras restringidas</h2>
+        <div class="do-dont">
+          <div class="list-panel">
+            <h3>Puedes decir</h3>
+            <ul>
+              <li>compatible with apple watch</li>
+              <li>smart watch band</li>
+            </ul>
+          </div>
+          <div class="list-panel">
+            <h3>No digas</h3>
+            <ul>
+              <li>Apple Watch band</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="cta">
+          <h2>Lista de entregables del creador</h2>
+          <p>Entrega varios videos verticales para TikTok de 20-30 segundos, con un estilo nativo de creador. El creador debe aparecer en cámara, mostrar cómo se pone el reloj, cómo instala la correa y dirigir claramente al enlace del producto. Prioriza la demostración en la muñeca izquierda y no uses la muñeca derecha como ángulo principal.</p>
+          <div class="badge-row">
+            <span class="badge">Vertical 9:16</span>
+            <span class="badge">Hook en 0-2 s</span>
+            <span class="badge">Demostración en muñeca izquierda</span>
+            <span class="badge">Reloj no incluido</span>
+            <span class="badge">Elegir tamaño y color</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    Brief para creadores de una correa inclinada de silicona suave para smartwatch.
+  </footer>
+</body>
+</html>
